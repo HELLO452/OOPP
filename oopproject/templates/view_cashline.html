@@ -1,0 +1,157 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>DBS CashLine</h1>
+    <style>
+    h1 {
+        text-align: center;
+    }
+    #hh{
+        width: 47%;
+        float: left;
+    }
+
+    th {
+        background-color: darkblue;
+        color: white;
+    }
+    th, td {
+        padding: 15px;
+        text-align: center;
+        font-size: 100%;
+    }
+    tr:hover{
+        background-color: lightblue;
+    }
+
+    table{
+        width: 100%;
+    }
+    * {box-sizing:border-box}
+
+    .container {
+        width: 100%;
+        background-color: #ddd;
+    }
+
+    .skills {
+        text-align: right;
+        line-height: 20px;
+        color: white;
+    }
+
+    .html {
+        width: 0%;
+        background-color: darkblue;
+        margin-left: -15px;
+    }
+    #showlimit{
+        border: 2px darkblue solid;
+    }
+    p {
+        font-size: 115%;
+    }
+    a {
+        font-size: 115%;
+    }
+    h3{
+        text-decoration: underline;
+    }
+    span{
+        color:darkslateblue;
+    }
+    select{
+        margin-left: -30px;
+    }
+    </style>
+    <select name="overdraft1" onchange="location = this.value;">
+        <option value="/viewcashline">DBS CashLine</option>
+        <option value="/vieweasicredit">OCBC Easicredit</option>
+    </select>
+        <div id="hh">
+            <img src="static/images/DBS_black_visa.png" alt="dbs" style=" width: 350px; height: 225px; align:left ;margin-top:40px;padding-top: -10px;">
+            <div style="padding-left: 60%;margin-top:-245px; ">
+            <h3>DBS Black Visa</h3>
+            <p>Last payment date:<span> </span></p>
+            <p>Amount paid:<span>  </span></p>
+            <p><a href="">View details---></a></p>
+            <p>Next payment date:<span> 12/1/2018</span></p>
+            </div>
+
+
+    <div id="showlimit" style="margin-top:125px;">
+        <p>Outstanding amount to credit limit</p>
+        <div class="container">
+            <div class="skills html">$0</div>
+        </div><br>
+    <div id="left">
+        <p>Current monthly salary:<span> $2,500</span></p>
+        <a href="">Renew income docoment</a>
+    </div>
+    <div id="right" style="float:right; margin-top: -55px;text-align: right;">
+        <p id="reached">Current Limit:<span>$5000</span></p>
+        <a href="">Change credit limit</a>
+    </div>
+    </div>
+    <div style="margin-top: 50px">
+    <h3>Usage Detail on December 2017</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Item</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button class="btn btn-primary">View Transaction Detail</button></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
+    <div style="float:right; width: 47%">
+    <p style="margin-top:20px; ">Annual fee waive off until 2019</p>
+    <img src="static/images/CNX_Econ_C30_002.jpg" alt="piechart" style="width: 350px; height: 175px; align:left;border-color: #4CAF50;">
+        <p>Shows total usage of this cashline account in different category</p>
+        <div>
+        <h3>Auto top up to:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Account No</th>
+                <th>Minimum Amt</th>
+                <th>Amt top-up</th>
+                <th>Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><button class="btn btn-primary" onclick="alert('Added')">Add</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+        </div>
+        <div style="">
+        <img src="static/images/CNX_Econ_C30_002.jpg" alt="piechart" style="width: 350px; height: 175px; align:left;">
+        </div>
+        <div style="float: right; margin-top: -120px">
+        <p>Interest Earned By 12/12 = <span>$0</span></p>
+        <p>Minimun payment(2.5%) = <span>$0</span></p>
+        </div>
+        <p>Shows monthly usage of this cashline account in different category</p>
+        <!--By default current month-->
+
+    </div>
+{% endblock %}
+

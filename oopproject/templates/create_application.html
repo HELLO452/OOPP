@@ -1,0 +1,103 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    {% from "includes/_formhelper.html" import render_field %}
+    <div id="outline" style="margin: 0% 5%; overflow: auto;">
+        <script>
+            $(document).ready(function () {
+                $('#dbs').show();
+                $('#uob').hide();
+                $('input[type="radio"]').click(function () {
+                    if ($(this).attr('value') == 'dbs/posb') {
+                        $('#dbs').show();
+                        $('#uob').hide();
+                    }
+                    else {
+                        $('#uob').show();
+                        $('#dbs').hide();
+                    }
+                });
+            });
+        </script>
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                <ul>
+                    {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+                        {% for error in field_errors %}
+                            <li>{{ form[field_name].label }}: {{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <form method="POST" action="">
+
+            <div class="class-group col-md-3"></div>
+            <div class="class-group col-md-6">
+                <fieldset>
+                <legend>Overdraft Application</legend>
+
+            <div class="form-group">
+                <div>
+                    {{ render_field(form.overdrafttype, class_="radio-inline") }}
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    {{ render_field(form.acctype, class_="radio-inline", name_="imp") }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ render_field(form.salarycreditacc, class_="form-control") }}
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <div>
+                        <p style="font-size: 20px;">Maximum Credit Limit of $10,000</p>
+                    </div>
+                    <div>
+
+                        {{ render_field(form.creditlimit, class_="form-control") }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    {{ render_field(form.file1, class_="form-control") }}
+
+                    <!--<input type="upload" value="Upload" class="btn btn-primary" />-->
+                    {{ render_field(form.file2, class_="form-control") }}
+                    <!--<input type="upload" value="Upload" class="btn btn-primary"/>-->
+                </div>
+            </div>
+            <div id="dbs">
+
+            </div>
+
+            <div id="uob">
+                <div class="form-group">
+                    {{render_field(form.document, class_="radio-inline") }}
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="form-group col-md-11">
+                    </div>
+                    <div class="form-group col-md-1">
+                        <input type="submit" value="Submit" class="btn btn-primary"/>
+                    </div>
+                </div>
+            </div>
+            </fieldset>
+        </div>
+        <div class="class-group col-md-3"></div>
+
+        </form>
+
+    </div>
+{% endblock %}
+

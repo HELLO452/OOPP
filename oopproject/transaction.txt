@@ -1,0 +1,11 @@
+Oct, 3/10/2017, $1400, Purpose, Category, extracash
+Oct, 25/10/2017, $540, Purpose, Category, extracash
+Oct, 30/10/2017, $920, Purpose, Category, extracash
+Nov, 1/11/2017, $500, To x-xxxxx-x, extracash
+Nov, 10/11/2017, $686, Chanel bag x1, Retail, extracash
+Nov, 15/11/2017, $2000, Conrad Hotel 3day-2night stay, Travel, extracash
+Nov, 26/11/2017, $780, Air ticket to China, Travel, extracash
+Dec, 3/12/2017, $50, Sushi Tei, Dining, extracash
+Dec, 5/12/2017, $100, NIKE shoe x1, Sports, extracash
+Dec, 10/12/2017, $800, LV Bags x1, Retail, extracash
+

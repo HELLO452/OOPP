@@ -1,0 +1,195 @@
+{% extends 'layout.html' %}
+<script type="text/javascript">
+    function popup(mylink, window) {
+        if (!window.focus) return true;
+        var href;
+        if (typeof(mylink) == 'string') href = mylink;
+        else href = mylink.href;
+        window.open(href, windowname, 'width=400, height=200, scrollbars=yes');
+        return false;
+    }
+</script>
+{% block body %}
+    <h1>OCBC EasiCredit</h1>
+    <style>
+    h1 {
+        text-align: center;
+    }
+    #hh{
+        width: 47%;
+        float: left;
+    }
+    #reached{
+        color: red;
+    }
+
+    th {
+        background-color: darkblue;
+        color: white;
+    }
+    th, td {
+        padding: 15px;
+        text-align: center;
+        font-size: 100%;
+    }
+    tr:hover{
+        background-color: lightblue;
+    }
+
+    table{
+        width: 100%;
+    }
+    * {box-sizing:border-box}
+
+    .container {
+        width: 100%;
+        background-color: #ddd;
+    }
+
+    .skills {
+        text-align: right;
+        line-height: 20px;
+        color: white;
+    }
+
+    .html {
+        width: 25%;
+        background-color: darkblue;
+        margin-left: -15px;
+    }
+    #showlimit{
+        border: 2px darkblue solid;
+    }
+    p {
+        font-size: 115%;
+    }
+    a {
+        font-size: 115%;
+    }
+    h3{
+        text-decoration: underline;
+    }
+    span{
+        color:darkslateblue;
+    }
+    select{
+        margin-left: -30px;
+    }
+    </style>
+    <select name="overdraft2" onchange="location = this.value;">
+        <option value="/vieweasicredit">OCBC EasiCredit</option>
+        <option value="/viewcashline">DBS CashLine</option>
+    </select>
+        <div id="hh">
+            <img src="static/images/OCBC_frank_debit.png" alt="ocbc" style=" width: 350px; height: 225px; align:left ;margin-top:40px;padding-top: -10px;">
+            <div style="padding-left: 60%;margin-top:-245px; ">
+            <h3>OCBC FRANK Card</h3>
+            <p>Last payment date:<span> 1/12/2017</span></p>
+            <p>Amount paid:<span> $50.00 </span></p>
+            <a href="/november">View details</a>
+            <p>Next payment date:<span> 15/12/2017</span></p>
+            </div>
+
+
+    <div id="showlimit" style="margin-top:125px;">
+        <p>Outstanding amount to credit limit</p>
+        <div class="container">
+            <div class="skills html">$2000(20%)</div>
+        </div><br>
+    <div id="left">
+        <p>Current monthly salary:<span> $2,500</span></p>
+        <a href="">Renew income docoment</a>
+    </div>
+    <div id="right" style="float:right; margin-top: -55px;text-align: right;">
+        <p id="reached">Reached maximum credit limit</p>
+        <a href="">Change credit limit</a>
+    </div>
+    </div>
+    <div style="margin-top: 50px">
+    <h3>Usage Detail on December 2017</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Item</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>3/12/2017</td>
+                <td>$50</td>
+                <td>Sushi Tei</td>
+                <td>Dining</td>
+            </tr>
+            <tr>
+                <td>5/12/2017</td>
+                <td>$100</td>
+                <td>NIKE shoe x1</td>
+                <td>Sports</td>
+            </tr>
+            <tr>
+                <td>10/12/2017</td>
+                <td>$800</td>
+                <td>LV Bags x1</td>
+                <td>Retail</td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-primary">View Transaction Detail</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
+    <div style="float:right; width: 47%">
+    <p style="margin-top:20px; ">Annual fee waive off until 2018</p>
+    <img src="static/images/CNX_Econ_C30_002.jpg" alt="piechart" style="width: 350px; height: 175px; align:left;border-color: #4CAF50;">
+        <p>Shows total usage of this cashline account in different category</p>
+        <div>
+        <h3>Auto top up to:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Account No</th>
+                <th>Minimum Amt</th>
+                <th>Amt top-up</th>
+                <th>Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>245-465678-556(OCBC saving account)</td>
+                <td>$500</td>
+                <td>$100</td>
+                <td>11/11/2017</td>
+                <td><button class="btn btn-success" onclick="alert('Are you sure to cancel auto top-up for this account?')">Cancel</button></td>
+            </tr>
+            <script></script>
+            <tr>
+                <td><button class="btn btn-primary" onclick="alert('Added')">Add</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+        </div>
+        <div style="">
+        <img src="static/images/CNX_Econ_C30_002.jpg" alt="piechart" style="width: 350px; height: 175px; align:left;">
+        </div>
+        <div style="float: right; margin-top: -120px">
+        <p>Interest Earned By 14/12 = <span>$11.28</span></p>
+        <p>Minimun payment(2.5%) = <span>$26.53</span></p>
+        </div>
+        <p>Shows monthly usage of this cashline account in different category</p>
+        <!--By default current month-->
+
+    </div>
+{% endblock %}
+

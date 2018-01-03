@@ -1,0 +1,58 @@
+{% extends 'loginlayout.html' %}
+
+{% block body %}
+
+    {% from "includes/_formhelper.html" import render_field %}
+      {% if form.errors %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+                    {% for error in field_errors %}
+                        <li>{{ form[field_name].label }}: {{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    <style>
+        img{
+            margin-top:150px;
+        }
+    </style>
+    <img src="static/images/SingPass.png" alt="SingPass" style="margin-left: 40%; width: 250px; height: 125px;">
+    <br><br>
+    <form method="POST" action="login">
+
+        <div class="form-group">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                </div>
+                <div class="form-group col-md-4">
+                    {{ render_field(form.username, class_="form-control") }}
+                    {{ render_field(form.password, class_="form-control") }}
+                </div>
+                <div class="form-group col-md-4">
+                </div>
+
+            </div>
+        </div>
+
+         <div class="form-group">
+            <div class="form-row">
+                <div class="form-group col-md-11">
+
+
+                </div>
+                <div class="form-group col-md-1">
+                    <input type="submit" value="Login" class="btn btn-info"/>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+
+
+
+{% endblock %}
+

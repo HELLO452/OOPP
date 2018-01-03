@@ -1,0 +1,79 @@
+<nav class="navbar navbar-inverse" style="background-color: steelblue;opacity:0.8;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false"
+                    aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" style="color: white;font-size: 25px;">I-BANKING</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav"style="color: white;">
+                <li class=""><a href="/home" style="color: white;">Home</a></li>
+                <li class="dropdown" ><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white;">Repot Lost<span
+                        class="caret"></span></a>
+                    <ul class="dropdown-menu" style="background-color: steelblue;opacity: 0.9;">
+                        <li><a href="/mailingdate" style="color: white">Replacement Mailing Date</a></li>
+                        <li><a href="/actication" style="color: white">Actication Of New Card</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white;">Transaction<span
+                        class="caret"></span></a>
+                    <ul class="dropdown-menu" style="background-color: steelblue;opacity: 0.9;">
+                        <li><a href="/creditCard" style="color: white">Credit Card</a></li>
+                        <li><a href="/debitCard" style="color: white">Debit Card</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white;">Overdraft<span
+                        class="caret"></span></a>
+                    <ul class="dropdown-menu" style="background-color: steelblue;opacity: 0.9;">
+                        <li><a href="/vieweasicredit" style="color: white">View Overdraft Details</a></li>
+                        <li><a href="/newapplication" style="color: white">Application Of Overdraft</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white;">Rewards<span
+                        class="caret"></span></a>
+                    <ul class="dropdown-menu" style="background-color: steelblue;opacity: 0.9;">
+                        <li><a href="/viewpoint" style="color: white">View Points</a></li>
+                        <li><a href="/caterloge" style="color: white">Rewards Caterloge</a></li>
+                        <li><a href="/cart" style="color: white">Check Cart</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                {% if session.logged_in %}
+                    <li>
+                        <form class="navbar-form navbar-left">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" style="background-color:darkgray; color: white";>
+                                <div class="input-group-btn">
+                                    <button class="btn btn-primary" type="submit">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white;">Welcome, {{ username }}<br>
+                        Your last logout was on {{ lastlogin }}<span
+                        class="caret"></span></a>
+                        <ul class="dropdown-menu" style="background-color: steelblue;opacity: 0.9;">
+                            <li><a href="/porfolio" style="color: white"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+                            <li><a href="/logout" style="color: white"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+                        </ul>
+                    </li>
+
+                {% else %}
+                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </div>
+</nav>
